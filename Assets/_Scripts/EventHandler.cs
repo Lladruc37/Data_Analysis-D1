@@ -18,19 +18,21 @@ public class EventHandler : MonoBehaviour
 
 	private void NewPlayer(string arg1, string arg2, DateTime arg3)
 	{
-		pcBuffer.name = arg1;
-		pcBuffer.country = arg2;
-		pcBuffer.dateTime = arg3;
-		ListPC.Add(pcBuffer);
-		Player2PHP(pcBuffer);
+		pcBuffer = new PlayerClass(arg1, arg2, arg3);
+		//ListPC.Add(pcBuffer);
+		StartCoroutine(Player2PHP(pcBuffer));
 	}
 	IEnumerator Player2PHP(PlayerClass pc)
 	{
-		dataUrl = url + phpUrl + pc.GetData();
-
+		dataUrl = url + phpUrl + "?" + pc.GetData();
+		Debug.Log(dataUrl);
 		using (WWW www = new WWW(dataUrl))
 		{
 			yield return www;
+
+			//TODO: Save UID in Unity
+			//Simulator.OnAddPlayerCallback
+			//www.text
 		}
 	}
 }

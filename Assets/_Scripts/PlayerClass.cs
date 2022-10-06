@@ -15,7 +15,7 @@ public class PlayerClass
 	}
 	public string GetData()
 	{
-		string data = "name=" + name + "+country=" + country + "+dateTime=" + dateTime.ToString();
+		string data = "name=" + name + "&country=" + country + "&dateTime=" + dateTime.ToString("yyyy-MM-dd HH:mm:ss");
 		return data;
 	}
 
