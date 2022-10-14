@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxPlayers: 100
-  BuyProbability: 0.1
+  BuyProbability: 1
   namegen: {fileID: 1280703613}
 --- !u!4 &445130836
 Transform:
@@ -182,8 +182,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd040691c1c6bb84fa55c7184ec02597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pcId: 0
+  sBuffer: {fileID: 0}
+  sId: 0
+  eId: 0
   url: https://citmalumnes.upc.es/~sergicf4/
-  phpUrl: AddPlayer.php
+  pcUrl: AddPlayer.php
+  sUrl: AddSession.php
+  bUrl: BuyItem.php
+  eUrl: EndSession.php
   dataUrl: 
 --- !u!1 &705507993
 GameObject:
